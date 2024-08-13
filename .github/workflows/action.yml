@@ -8,9 +8,11 @@ on:
   push: {branches: ["master", "main"]}
 jobs:
   github-metrics:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
-      - uses: lowlighter/metrics@master
+      - uses: lowlighter/metrics@latest
         with:
           # Your GitHub token
           token: ${{ secrets.PROFILE_METERICS }}
